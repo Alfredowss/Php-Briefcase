@@ -1,9 +1,21 @@
 <?php
 
+
 	namespace App\Controllers;
 
-	class About{
+	use App\Models\Users;
+
+	class About extends BaseController{
+
+		private $model;
+
+		public function __construct(){
+			parent::__construct();
+			$this->model = 	new Users();
+		}
+		
 		public function getView(){
-			echo 'Hello Alfredo';	
+			var_dump($this->getAll($this->model));
+			$this->renderTemplate('about.twig', []);	
 		}
 	} 

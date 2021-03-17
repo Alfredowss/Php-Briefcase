@@ -15,7 +15,14 @@
 		}
 		
 		public function getView(){
-			var_dump($this->getAll($this->model));
-			$this->renderTemplate('about.twig', []);	
+			$query = $this->getAll($this->model);
+			$query= $query[0];			
+			$this->renderTemplate('about.twig', [
+
+				'name' => $query['name'],
+				'experience' => $query['experience'],
+				'age' => $query['age']	
+
+			]);	
 		}
 	} 

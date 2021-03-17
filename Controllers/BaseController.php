@@ -17,7 +17,6 @@
 		}
 
 		protected function renderTemplate($name, $data = []){
-			var_dump($name);
 			echo $this->twig->render($name, $data);
 		}
 
